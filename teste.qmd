@@ -430,7 +430,7 @@ Em Python, bibliotecas (também chamadas de pacotes) são conjuntos de funções
 A palavra-chave import é usada para incluir essas bibliotecas no seu código.
 
 **Sintaxe Básica**\
-Importar uma biblioteca inteira
+Importar uma biblioteca 
 ```{bash}
 import math  # Importa a biblioteca 'math' (matemática)
 ```
