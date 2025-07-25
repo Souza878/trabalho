@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Trabalho sobre Python, Git e GitHub</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="teste_files/libs/clipboard/clipboard.min.js"></script>
+<script src="teste_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="teste_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="teste_files/libs/quarto-html/popper.min.js"></script>
+<script src="teste_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="teste_files/libs/quarto-html/anchor.min.js"></script>
+<link href="teste_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="teste_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="teste_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="teste_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="teste_files/libs/bootstrap/bootstrap-50a529341e8c9fcab6df968f18cb8aa7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="teste.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trabalho sobre Python, Git e GitHub</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Professor: Pedro Rafael<br>
+Aluno: Edivan Dias de Souza</p>
+<p><strong>Git e GitHub</strong></p>
+<p>GitHub: É uma plataforma online que hospeda repositórios Git na nuvem, como também permite acessar projetos de outras pessoas de qualquer lugar.</p>
+<p>Git: Criado por Linus Torvalds (criador do Linux) em 2005, é um sistema distribuído para Gerenciamento de Código Fonte, permite que você registre o histórico de alterações em arquivos localmente no seu computador e colabore com outras pessoas em projetos de software.</p>
+<p><em>Como o Git Funciona?</em><br>
+</p>
+<p>Um repositório Git é uma pasta onde seu projeto é versionado, Pode ser no seu computador ou remoto (por exemplo, no GitHub), os arquivos podem estar em 3 estados:</p>
+<p>Modificado: Arquivos alterados, mas não preparados;<br>
+Preparado: Arquivos selecionados para entrar no próximo commit; Confirmado: Alterações salvas no histórico do Git.</p>
+<p>O Git também permite trabalhar em branches (ramificações) separadas, sendo o branch padrão é o main (ou master em projetos antigos), Você pode criar um novo branch para uma funcionalidade e depois mesclar.</p>
+<p><strong>Comandos básicos do Git</strong></p>
+<p><em>git init:</em></p>
+<p>O que faz: Inicializa um novo repositório Git em uma pasta local, criando um diretório oculto .git que armazena o histórico de versões.</p>
+<p>Quando usar: Quando está iniciando um projeto do zero.</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>git init      # iniciando um projeto do zero.</code></pre>
+<p><em>git add:</em></p>
+<p>O que faz: Adiciona arquivos ao Staging Area (área de preparação), indicando quais alterações serão incluídas no próximo commit.</p>
+<p>Quando usar: Após modificar arquivos.</p>
+<p>Exemplos:<br>
+</p>
+<pre class="{bash}"><code>git add arquivo.txt        # Adiciona um arquivo específico
+git add .                  # Adiciona TODOS os arquivos modificados
+git add *.js               # Adiciona todos os arquivos .js</code></pre>
+<p><em>git commit:</em></p>
+<p>O que faz: Salva as alterações adicionadas com git add, criando um ponto de restauração no histórico.</p>
+<p>Quando usar: Quando quiser salvar um conjunto de alterações com uma descrição.</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>git commit -m "Adiciona funcionalidade de login"</code></pre>
+<p><em>git push:</em></p>
+<p>O que faz: Envia os commits do seu repositório local para um repositório remoto (como GitHub).</p>
+<p>Quando usar: Após fazer commits locais e querer enviá-los ao GitHub.</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>git push origin main     # Envia commits para o branch no repositório remoto</code></pre>
+<p><em>git pull:</em></p>
+<p>O que faz: Puxa as alterações mais recentes do repositório remoto e as mescla com seu branch local.</p>
+<p>Quando usar: Antes de começar a trabalhar para evitar conflitos (caso outros colaboradores façam alterações no repositório remoto).</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>git pull origin main    </code></pre>
+<p><em>git clone:</em></p>
+<p>O que faz: Cria uma cópia de um repositório remoto para sua máquina local.</p>
+<p>Quando usar: Quando quiser baixar um projeto existente (ex: do GitHub) para editar.</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>https://github.com/quarto-dev/quarto-gallery/blob/main/page-layout/tufte.qmd</code></pre>
+<p><strong>Repositório e Commit:</strong></p>
+<p><em>Repositório</em></p>
+<p>Um repositório é uma pasta que contém todos os arquivos do seu código mais o histórico de alterações. Pode ser local (no seu computador) ou remoto (no GitHub/GitLab). Armazena não só os arquivos atuais, mas também todas as versões passadas.</p>
+<p>Como é criado?</p>
+<p>Local: git init (cria um repositório vazio).</p>
+<p>Remoto: Criado no GitHub/GitLab (ou via git clone para baixar um existente).</p>
+<p><em>Commit</em></p>
+<p>Um commit é uma cópia das alterações do seu projeto em um momento específico, funciona como um ponto de salvamento no histórico do repositório.</p>
+<p>como criar:</p>
+<pre class="{bash}"><code>git add arquivo.txt          # Prepara as alterações  
+git commit -m "Mensagem"     # Salva o commit  </code></pre>
+<p><strong>Python</strong></p>
+<p><strong>pip</strong></p>
+<p>O pip é o gerenciador de pacotes padrão do Python, usado para instalar, atualizar e remover bibliotecas/bibliotecas de terceiros. Ele se conecta ao Python Package Index, um repositório público de pacotes Python.</p>
+<p><em>Usando o pip install para instalar pacotes</em></p>
+<p>passo 1: Verifique se o pip está instalado, Abra o terminal (Linux/macOS) ou Prompt de Comando/PowerShell (Windows) e execute:</p>
+<pre class="{bash}"><code>pip --version</code></pre>
+<p>Se aparecer a versão, o pip já está instalado. Caso contrário, instale-o com:</p>
+<pre class="{bash}"><code>python -m ensurepip --upgrade  </code></pre>
+<p>Passo 2: Use o comando:</p>
+<pre class="{bash}"><code>pip install pacote_qualquer</code></pre>
+<p>Exemplos:</p>
+<pre class="{bash}"><code>pip install requests     
+pip install numpy       
+pip install pandas      
+pip install matplotlib</code></pre>
+<p><strong>Conceitos iniciais de Python</strong></p>
+<p><strong>Tipos de dados</strong></p>
+<p>“<strong>int</strong>”, representa números Inteiros(números inteiros, positivos ou negativos, sem casas decimais).</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>idade = 19
+ano = -2006</code></pre>
+<p><strong>“float”</strong>, representa números reais (com ponto decimal)</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>altura = 1.69
+temperatura = 24
+nota = 8.75</code></pre>
+<p><strong>“str - String”</strong>, Representa cadeias de caracteres (textos). Pode conter letras, números, símbolos, etc.</p>
+<p>Exemplos:</p>
+<pre class="{bash}"><code>nome = "Edivan Dias"
+mensagem = 'exemplo'</code></pre>
+<p><strong>“bool”</strong>, representa valores lógicos: True (verdadeiro) ou False (falso).</p>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>x = 9
+y = 6
+
+print(x &gt;= y) # saida: True
+print(y &gt;= x) # saida: False</code></pre>
+<p><strong>Variáveis e operadores básicos</strong></p>
+<p><em>Operadores Aritméticos (números)</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Significado</th>
+<th>Exemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Soma</td>
+<td><code>5 + 3</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>Subtração</td>
+<td><code>10 - 2</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Multiplicação</td>
+<td><code>4 * 2</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>Divisão</td>
+<td><code>16 / 2</code></td>
+<td><code>8.0</code></td>
+</tr>
+<tr class="odd">
+<td><code>//</code></td>
+<td>Divisão inteira</td>
+<td><code>17 // 2</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="even">
+<td><code>%</code></td>
+<td>Módulo (resto)</td>
+<td><code>17 % 2</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="odd">
+<td><code>**</code></td>
+<td>Potenciação</td>
+<td><code>2 ** 3</code></td>
+<td><code>8</code></td>
+</tr>
+</tbody>
+</table>
+<p>Exemplos de operadores Aritméticos:</p>
+<pre class="{bash}"><code>print(5 + 3) # Saída: 8
+
+print(5 - 3) # Saída: 2
+
+print(5 * 3) # Saída: 15
+
+print(5 ** 3) # Saída: 125
+
+print(15 / 5) # Saída: 3
+
+print(17 // 2) # Saída: 8
+
+print(17 % 2) # Saída: 1</code></pre>
+<p><em>Operadores de Comparação (retornam True ou False)</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Significado</th>
+<th>Exemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Igual</td>
+<td><code>5 == 5</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>Diferente</td>
+<td><code>5 != 3</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>Maior</td>
+<td><code>7 &gt; 4</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;</code></td>
+<td>Menor</td>
+<td><code>3 &lt; 2</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td>Maior ou igual</td>
+<td><code>6 &gt;= 6</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>Menor ou igual</td>
+<td><code>2 &lt;= 3</code></td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p>Exemplos de Operadores de Comparação:</p>
+<pre class="{bash}"><code>a = 10
+b = 5
+
+print(a == b)     # False (10 não é igual a 5)
+print(a != b)     # True  (10 é diferente de 5)
+print(a &gt; b)      # True  (10 é maior que 5)
+print(a &lt; b)      # False (10 não é menor que 5)
+print(a &gt;= 10)    # True  (10 é maior ou igual a 10)
+print(b &lt;= 3)     # False (5 não é menor ou igual a 3)
+</code></pre>
+<p><em>Operadores Lógicos (usados com bool)</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Significado</th>
+<th>Exemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>and</code></td>
+<td>E (ambos verdadeiros)</td>
+<td><code>True and False</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>or</code></td>
+<td>OU (um ou outro)</td>
+<td><code>True or False</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>not</code></td>
+<td>Negação (inverso)</td>
+<td><code>not True</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p>Exemplos de Operadores Lógicos:</p>
+<p>Exemplo de “and”: Retorna True <strong>somente</strong> se as duas condições forem verdadeiras.</p>
+<pre class="{bash}"><code>a = 10
+b = 5
+
+print(a &gt; 5 and b &lt; 10)    # True (10 &gt; 5 E 5 &lt; 10)
+print(a &gt; 15 and b &lt; 10)   # False (10 &gt; 15 é falso)
+</code></pre>
+<p>Exemplo de “or”: Retorna True <strong>se pelo menos</strong> uma condição for verdadeira.</p>
+<pre class="{bash}"><code>a = 10
+b = 5
+
+print(a &gt; 5 or b &gt; 10)     # True (10 &gt; 5 é verdadeiro)
+print(a &lt; 5 or b &gt; 10)     # False (nenhuma é verdadeira)</code></pre>
+<p>Exemplo de “not”: Inverte o valor lógico da condição.</p>
+<pre class="{bash}"><code>verdade = True
+mentira = False
+
+print(not verdade)   # False
+print(not mentira)   # True
+</code></pre>
+<p><strong>Estruturas de controle</strong></p>
+<p><strong>if</strong>: Representa uma condição simples, executa um bloco de código se a condição for verdadeira.<br>
+Exemplo:</p>
+<pre class="{bash}"><code>idade = 18
+
+if idade &gt;= 18:
+    print("Você é maior de idade.")</code></pre>
+<p><strong>else</strong>: Representa uma condição alternativa, executa um bloco de código caso a condição do if seja falsa.<br>
+Exemplo:</p>
+<pre class="{bash}"><code>idade = 16
+
+if idade &gt;= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+</code></pre>
+<p><strong>elif</strong>: Representa uma condição intermediária, serve como um “senão se”, para testar múltiplas condições. Exemplo:</p>
+<pre class="{bash}"><code>nota = 7
+
+if nota &gt;= 10:
+    print("Excelente!")
+elif nota &gt;= 7:
+    print("Aprovado.")
+else:
+    print("Reprovado.")</code></pre>
+<p><strong>for e while</strong>: Usados para repetir ações (Loops).</p>
+<p>for(Para cada): Usado para percorrer uma sequência (lista, string, intervalo etc.).</p>
+<p>while: Repete um bloco de código enquanto a condição for verdadeira.</p>
+<p>Exemplos de for e while</p>
+<pre class="{bash}"><code>for i in range(5):  # Vai de 0 a 4
+    print("Número:", i)
+</code></pre>
+<pre class="{bash}"><code>contador = 0
+
+while contador &lt; 5:
+    print("Contando:", contador)
+    contador += 1
+</code></pre>
+<p>loop infinito</p>
+<pre class="{bash}"><code>while True:
+    print("Loop infinito!")  # Pressione Ctrl+C para parar</code></pre>
+<p><strong>Funções</strong></p>
+<p>Uma função é um bloco de código reutilizável que realiza uma tarefa. Você pode definir suas próprias funções com def, passar parâmetros e retornar valores com return.</p>
+<p><strong>Definindo Funções</strong></p>
+<p>Para criar uma função, use a palavra-chave def seguida do nome da função e parênteses ().<br>
+Estrutura básica de uma função:</p>
+<pre class="{bash}"><code>def nome_da_funcao():
+    # Bloco de código
+    print("Olá, mundo")</code></pre>
+<p>Exemplo:</p>
+<pre class="{bash}"><code>def saudacao():
+    print("Oi")
+
+saudacao()  # Chamada da função
+</code></pre>
+<p><strong>Função com parâmetros</strong></p>
+<p>Parâmetros: Variáveis listadas na definição da função. Exemplo:</p>
+<pre class="{bash}"><code>def saudacao(nome):
+    print(f"Olá, {nome}")
+
+saudacao("Edivan")  # Saída: Olá, Edivan
+</code></pre>
+<p><strong>return (Retorno de Valores)</strong></p>
+<p>A palavra-chave return envia um valor de volta para quem chamou a função.</p>
+<p>Função com Retorno:</p>
+<pre class="{bash}"><code>def quadrado(numero):
+    return numero ** 2
+
+resultado = quadrado(4)
+print(resultado)  # Saída: 16</code></pre>
+<p><strong>import</strong> (Importação de Bibliotecas em Python)</p>
+<p>Em Python, bibliotecas (também chamadas de pacotes) são conjuntos de funções, classes e variáveis pré-escritas que estendem as funcionalidades da linguagem. A palavra-chave import é usada para incluir essas bibliotecas no seu código.</p>
+<p><strong>Sintaxe Básica</strong><br>
+Importar uma biblioteca inteira</p>
+<pre class="{bash}"><code>import math  # Importa a biblioteca 'math' (matemática)</code></pre>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

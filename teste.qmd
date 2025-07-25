@@ -1,0 +1,437 @@
+---
+title: "Trabalho sobre Python, Git e GitHub"
+format:
+  html:
+    grid:
+      margin-width: 350px
+  pdf: default
+reference-location: margin
+citation-location: margin
+---
+Professor: Pedro Rafael \
+Aluno: Edivan Dias de Souza
+
+**Git e GitHub**
+
+GitHub: É uma plataforma online que hospeda repositórios Git na nuvem, 
+como também permite acessar projetos de outras pessoas de qualquer lugar.
+
+Git: Criado por Linus Torvalds (criador do Linux) em 2005, é um sistema distribuído para Gerenciamento de Código Fonte, 
+permite que você registre o histórico de alterações em arquivos
+localmente no seu computador e colabore com outras pessoas em projetos de software.
+
+*Como o Git Funciona?*\
+
+Um repositório Git é uma pasta onde seu projeto é versionado, Pode ser no seu computador ou remoto 
+(por exemplo, no GitHub), os arquivos podem estar em 3 estados:
+
+Modificado: Arquivos alterados, mas não preparados;\
+Preparado: Arquivos selecionados para entrar no próximo commit;
+Confirmado: Alterações salvas no histórico do Git.
+
+O Git também permite trabalhar em branches (ramificações) separadas, sendo
+ o branch padrão é o main (ou master em projetos antigos), Você pode criar um novo branch para uma 
+ funcionalidade e depois mesclar.
+
+ **Comandos básicos do Git**
+
+*git init:*
+
+ O que faz: Inicializa um novo repositório Git em uma pasta local, criando um diretório oculto .git que armazena o histórico de versões.
+
+Quando usar: Quando está iniciando um projeto do zero.
+
+Exemplo:
+
+```{bash}
+git init      # iniciando um projeto do zero.
+```
+
+*git add:*
+
+O que faz: Adiciona arquivos ao Staging Area (área de preparação), indicando quais alterações serão incluídas no próximo commit.
+
+Quando usar: Após modificar arquivos.
+
+Exemplos:\
+
+```{bash}
+git add arquivo.txt        # Adiciona um arquivo específico
+git add .                  # Adiciona TODOS os arquivos modificados
+git add *.js               # Adiciona todos os arquivos .js
+```
+
+ *git commit:*
+
+O que faz: Salva as alterações adicionadas com git add, criando um ponto de restauração no histórico.
+
+Quando usar: Quando quiser salvar um conjunto de alterações com uma descrição.
+
+Exemplo:
+
+```{bash}
+git commit -m "Adiciona funcionalidade de login"
+```
+
+*git push:*
+
+O que faz: Envia os commits do seu repositório local para um repositório remoto (como GitHub).
+
+Quando usar: Após fazer commits locais e querer enviá-los ao GitHub.
+
+Exemplo:
+
+```{bash}
+git push origin main     # Envia commits para o branch no repositório remoto
+```
+
+*git pull:*
+
+O que faz: Puxa as alterações mais recentes do repositório remoto e as mescla
+ com seu branch local.
+
+Quando usar: Antes de começar a trabalhar para evitar conflitos (caso outros 
+colaboradores façam alterações no repositório remoto).
+
+Exemplo:
+
+```{bash}
+git pull origin main    
+```
+
+*git clone:*
+
+O que faz: Cria uma cópia de um repositório remoto para sua máquina local.
+
+Quando usar: Quando quiser baixar um projeto existente (ex: do GitHub) para editar.
+
+Exemplo:
+
+```{bash}
+https://github.com/quarto-dev/quarto-gallery/blob/main/page-layout/tufte.qmd
+```
+
+**Repositório e Commit:**
+
+*Repositório*
+
+ Um repositório é uma pasta que contém todos os arquivos do seu código mais o histórico de alterações. Pode ser local (no seu computador)
+ ou remoto (no GitHub/GitLab). Armazena não só os arquivos atuais, mas também todas as versões passadas.
+
+Como é criado?
+
+Local: git init (cria um repositório vazio).
+
+Remoto: Criado no GitHub/GitLab (ou via git clone para baixar um existente).
+
+
+*Commit*
+
+Um commit é uma cópia das alterações do seu projeto em um momento específico, funciona como um ponto
+ de salvamento no histórico do repositório.
+
+como criar:
+```{bash}
+git add arquivo.txt          # Prepara as alterações  
+git commit -m "Mensagem"     # Salva o commit  
+```
+
+**Python**
+
+**pip**
+
+O pip é o gerenciador de pacotes padrão do Python, usado para instalar,
+ atualizar e remover bibliotecas/bibliotecas de terceiros. 
+ Ele se conecta ao Python Package Index, um repositório público de pacotes Python.
+
+*Usando o pip install para instalar pacotes*
+
+passo 1: Verifique se o pip está instalado,
+Abra o terminal (Linux/macOS) ou Prompt de Comando/PowerShell (Windows) e execute:
+```{bash}
+pip --version
+```
+
+Se aparecer a versão, o pip já está instalado. Caso contrário, instale-o com:
+```{bash}
+python -m ensurepip --upgrade  
+```
+
+Passo 2:
+Use o comando:
+```{bash}
+pip install pacote_qualquer
+```
+
+Exemplos:
+```{bash}
+pip install requests     
+pip install numpy       
+pip install pandas      
+pip install matplotlib
+```
+
+**Conceitos iniciais de Python**
+
+**Tipos de dados**
+
+"**int**", representa números Inteiros(números inteiros, 
+positivos ou negativos, sem casas decimais).
+
+Exemplo:
+```{bash}
+idade = 19
+ano = -2006
+```
+
+**"float"**,  representa números reais (com ponto decimal)
+
+Exemplo:
+```{bash}
+altura = 1.69
+temperatura = 24
+nota = 8.75
+```
+
+**"str - String"**, Representa cadeias de caracteres (textos).
+ Pode conter letras, números, símbolos, etc.
+
+Exemplos:
+```{bash}
+nome = "Edivan Dias"
+mensagem = 'exemplo'
+```
+
+**"bool"**, representa valores lógicos: True (verdadeiro) ou False (falso).
+
+Exemplo:
+```{bash}
+x = 9
+y = 6
+
+print(x >= y) # saida: True
+print(y >= x) # saida: False
+```
+
+**Variáveis e operadores básicos**
+
+ *Operadores Aritméticos (números)*
+
+| Operador | Significado     | Exemplo   | Resultado |
+| -------- | --------------- | --------- | --------- |
+| `+`      | Soma            | `5 + 3`   | `8`       |
+| `-`      | Subtração       | `10 - 2`  | `8`       |
+| `*`      | Multiplicação   | `4 * 2`   | `8`       |
+| `/`      | Divisão         | `16 / 2`  | `8.0`     |
+| `//`     | Divisão inteira | `17 // 2` | `8`       |
+| `%`      | Módulo (resto)  | `17 % 2`  | `1`       |
+| `**`     | Potenciação     | `2 ** 3`  | `8`       |
+
+
+Exemplos de operadores Aritméticos:
+```{bash}
+print(5 + 3) # Saída: 8
+
+print(5 - 3) # Saída: 2
+
+print(5 * 3) # Saída: 15
+
+print(5 ** 3) # Saída: 125
+
+print(15 / 5) # Saída: 3
+
+print(17 // 2) # Saída: 8
+
+print(17 % 2) # Saída: 1
+```
+
+*Operadores de Comparação (retornam True ou False)*
+
+| Operador | Significado    | Exemplo  | Resultado |
+| -------- | -------------- | -------- | --------- |
+| `==`     | Igual          | `5 == 5` | `True`    |
+| `!=`     | Diferente      | `5 != 3` | `True`    |
+| `>`      | Maior          | `7 > 4`  | `True`    |
+| `<`      | Menor          | `3 < 2`  | `False`   |
+| `>=`     | Maior ou igual | `6 >= 6` | `True`    |
+| `<=`     | Menor ou igual | `2 <= 3` | `True`    |
+
+Exemplos de Operadores de Comparação:
+
+```{bash}
+a = 10
+b = 5
+
+print(a == b)     # False (10 não é igual a 5)
+print(a != b)     # True  (10 é diferente de 5)
+print(a > b)      # True  (10 é maior que 5)
+print(a < b)      # False (10 não é menor que 5)
+print(a >= 10)    # True  (10 é maior ou igual a 10)
+print(b <= 3)     # False (5 não é menor ou igual a 3)
+
+```
+
+*Operadores Lógicos (usados com bool)*
+
+| Operador | Significado           | Exemplo          | Resultado |
+| -------- | --------------------- | ---------------- | --------- |
+| `and`    | E (ambos verdadeiros) | `True and False` | `False`   |
+| `or`     | OU (um ou outro)      | `True or False`  | `True`    |
+| `not`    | Negação (inverso)     | `not True`       | `False`   |
+
+Exemplos de Operadores Lógicos:
+
+Exemplo de "and": Retorna True **somente** se as duas condições forem verdadeiras.
+```{bash}
+a = 10
+b = 5
+
+print(a > 5 and b < 10)    # True (10 > 5 E 5 < 10)
+print(a > 15 and b < 10)   # False (10 > 15 é falso)
+
+```
+
+Exemplo de "or": Retorna True **se pelo menos** uma condição for verdadeira.
+```{bash}
+a = 10
+b = 5
+
+print(a > 5 or b > 10)     # True (10 > 5 é verdadeiro)
+print(a < 5 or b > 10)     # False (nenhuma é verdadeira)
+```
+
+Exemplo de "not": Inverte o valor lógico da condição.
+```{bash}
+verdade = True
+mentira = False
+
+print(not verdade)   # False
+print(not mentira)   # True
+
+```
+
+**Estruturas de controle**
+
+**if**: Representa uma condição simples, executa um bloco de código se a condição for verdadeira.\
+Exemplo: 
+```{bash}
+idade = 18
+
+if idade >= 18:
+    print("Você é maior de idade.")
+```
+
+**else**: Representa uma condição alternativa, executa um bloco de código caso a condição do if seja falsa.\
+Exemplo: 
+```{bash}
+idade = 16
+
+if idade >= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+
+```
+
+**elif**: Representa uma condição intermediária, serve como um "senão se", para testar múltiplas condições.
+Exemplo:
+```{bash}
+nota = 7
+
+if nota >= 10:
+    print("Excelente!")
+elif nota >= 7:
+    print("Aprovado.")
+else:
+    print("Reprovado.")
+```
+
+**for e while**: Usados para repetir ações (Loops).
+
+for(Para cada): Usado para percorrer uma sequência (lista, string, intervalo etc.).
+
+while: Repete um bloco de código enquanto a condição for verdadeira.
+
+Exemplos de for e while
+
+```{bash}
+for i in range(5):  # Vai de 0 a 4
+    print("Número:", i)
+
+```
+
+```{bash}
+contador = 0
+
+while contador < 5:
+    print("Contando:", contador)
+    contador += 1
+
+```
+
+loop infinito 
+```{bash}
+while True:
+    print("Loop infinito!")  # Pressione Ctrl+C para parar
+```
+
+**Funções**
+
+Uma função é um bloco de código reutilizável que realiza uma tarefa.
+Você pode definir suas próprias funções com def, passar parâmetros e retornar valores com return.
+
+**Definindo Funções**
+
+Para criar uma função, use a palavra-chave def seguida do nome da função e parênteses ().\
+Estrutura básica de uma função:
+```{bash}
+def nome_da_funcao():
+    # Bloco de código
+    print("Olá, mundo")
+```
+
+Exemplo:
+```{bash}
+def saudacao():
+    print("Oi")
+
+saudacao()  # Chamada da função
+
+```
+
+**Função com parâmetros**
+
+Parâmetros: Variáveis listadas na definição da função.
+Exemplo:
+```{bash}
+def saudacao(nome):
+    print(f"Olá, {nome}")
+
+saudacao("Edivan")  # Saída: Olá, Edivan
+
+```
+**return (Retorno de Valores)**
+
+A palavra-chave return envia um valor de volta para quem chamou a função.
+
+Função com Retorno:
+```{bash}
+def quadrado(numero):
+    return numero ** 2
+
+resultado = quadrado(4)
+print(resultado)  # Saída: 16
+```
+
+**import** (Importação de Bibliotecas em Python)
+
+Em Python, bibliotecas (também chamadas de pacotes) são conjuntos de funções,
+ classes e variáveis pré-escritas que estendem as funcionalidades da linguagem. 
+A palavra-chave import é usada para incluir essas bibliotecas no seu código.
+
+**Sintaxe Básica**\
+Importar uma biblioteca inteira
+```{bash}
+import math  # Importa a biblioteca 'math' (matemática)
+```
+
