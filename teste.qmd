@@ -310,6 +310,126 @@ print(not mentira)   # True
 
 ```
 
+**Listas, tuplas e dicionários**
+
+ São estruturas de dados usadas para armazenar e organizar informações. 
+
+ **(list)**\
+ Listas são;\
+ Mutáveis, podendo ser alterada após a criação.\
+ Ordenadas, mantém a ordem dos elementos.\
+ Sua sintaxe usa colchetes [].
+
+```{bash}
+comandos basicos:
+.append(x)	    Adiciona x ao final.
+.insert(i, x)   Insere x na posição i.
+.remove(x)	    Remove o primeiro x encontrado.
+.pop(i)	        Remove e retorna o item no índice i.
+.sort()	        Ordena a lista.
+```
+
+Exemplo:
+```{bash}
+# Criando uma lista
+frutas = ["maçã", "banana", "laranja"]
+
+# Acessando elementos (índice começa em 0)
+print(frutas[1])  # Saída: "banana"
+
+# Adicionando elementos
+frutas.append("uva")        # Adiciona no final
+frutas.insert(1, "kiwi")    # Insere em uma posição específica
+
+# Removendo elementos
+frutas.remove("banana")     # Remove pelo valor
+frutas.pop(0)               # Remove pelo índice
+
+# Fatiamento (slicing)
+print(frutas[1:3])          # Saída: ["kiwi", "laranja"]
+
+# Tamanho da lista
+print(len(frutas))          # Saída: 3
+```
+
+**(tuple)**\
+
+Tuplas são;\
+Imutáveis, não pode ser alterada após a criação.\
+Ordenadas, mantém a ordem dos elementos.\
+Sua sintaxe usa parênteses ().\
+
+Quando Usar: quando não querer que os dados sejam alterados (ex.: constantes).
+
+Exemplo:
+```{bash}
+# Criando uma tupla
+coordenadas = (10, 20, 30)
+
+# Acessando elementos
+print(coordenadas[0])  # Saída: 10
+
+# Tuplas são imutáveis (erro se tentar modificar)
+# coordenadas[0] = 5  # TypeError!
+
+# Fatiamento (slicing)
+print(coordenadas[1:3])  # Saída: (20, 30)
+
+# Desempacotamento
+x, y, z = coordenadas
+print(y)  # Saída: 20
+```
+
+**(dict)**
+
+Dicionários são;\
+Mutáveis, podendo ser alterado após a criação.\
+Não ordenado, (antes do Python 3.7) / Ordenado (Python 3.7+).\
+Armazena pares chave-valor.\
+Sua sintaxe: Usa chaves {} e chave: valor.
+
+Exemplo:
+```{bash}
+# Criando um dicionário
+pessoa = {
+    "nome": "João",
+    "idade": 30,
+    "cidade": "São Paulo"
+}
+
+# Acessando valores
+print(pessoa["nome"])  # Saída: "João"
+
+# Adicionando/Modificando valores
+pessoa["profissão"] = "Engenheiro"  # Adiciona nova chave
+pessoa["idade"] = 31                # Atualiza valor
+
+# Removendo valores
+pessoa.pop("cidade")                # Remove a chave "cidade"
+
+# Verificando chaves
+print("nome" in pessoa)             # Saída: True
+
+# Iterando sobre um dicionário
+for chave, valor in pessoa.items():
+    print(f"{chave}: {valor}")
+```
+
+```{bash}
+Principais comandos:
+
+.keys()	      Retorna todas as chaves.
+.values()	  Retorna todos os valores.
+.items()	  Retorna pares (chave, valor).
+.get(chave)	  Retorna o valor ou None se a chave não existir.
+.pop(chave)	  Remove e retorna o valor da chave.
+```
+
+Resumo:\
+Lista: para coleções ordenadas e mutáveis.\
+Tupla: para coleções imutáveis.\
+Dicionário: para dados nomeados.
+
 **Estruturas de controle**
 
 **if**: Representa uma condição simples, executa um bloco de código se a condição for verdadeira.\
@@ -434,4 +554,3 @@ Importar uma biblioteca
 ```{bash}
 import math  # Importa a biblioteca 'math' (matemática)
 ```
-
