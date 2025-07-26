@@ -8,7 +8,9 @@ Aluno: Edivan Dias de Souza
 - **Git e GitHub**
    - Git: sistema distribuído para Gerenciamento de Código Fonte
    - GitHub: plataforma online que hospeda repositórios Git na nuvem
-   -  para que servem, é os principais comandos.
+   - Pincipais comandos: git init, git add, git commit, git push, git pull, git clone, git status.
 - **pip**
-
+   - Gerenciador de pacotes padrão do Python, usado para instalar,
+ atualizar e remover bibliotecas/bibliotecas
+   - comandos básicos: "pip --version", "pip install".
 - **Conceitos iniciais de Python**
