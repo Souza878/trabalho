@@ -15,3 +15,8 @@ Aluno: Edivan Dias de Souza
    - comandos básicos: "pip --version", "pip install".
 - **Conceitos iniciais de Python**
    - Tipos de dados: "int", "float", "str", "bool".
+   - Variáveis e operadores básicos;
+   - Operadores Aritméticos: "+", "-", "*", "/", "//", "%";
+   - Operadores de Comparação: "==", "!=", ">", "<", ">=", "<=".
+   -  
+      
