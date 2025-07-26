@@ -1,7 +1,14 @@
-**Trabalho sobre python, Git e GitHub**
+# Trabalho sobre python, Git e GitHub
 
 Professor: Pedro Rafael\
 Aluno: Edivan Dias de Souza
 
-**Apresentação**\
-Tive como objetivo apresentar brevemente os fundamentos da linguagem de programação Python, bem como os principais conceitos e comandos do Git utilizando a plataforma GitHub.
+# Principais tópicos abordados
+
+- **Git e GitHub**
+   - Git: sistema distribuído para Gerenciamento de Código Fonte
+   - GitHub: plataforma online que hospeda repositórios Git na nuvem
+   -  para que servem, é os principais comandos.
+- **pip**
+
+- **Conceitos iniciais de Python**
