@@ -23,6 +23,7 @@ Aluno: Edivan Dias de Souza
    - Estruturas de controle: if, else, elif, for, while;
    - Listas(list), tuplas(tuple) e dicionários(dict);
    - Funções: definição com def, parâmetros, retorno(return);
+<<<<<<< HEAD
 Professor: Pedro Rafael\
 Aluno: Edivan Dias de Souza
 
@@ -46,3 +47,7 @@ Aluno: Edivan Dias de Souza
    - Estruturas de controle: if, else, elif, for, while;
    - Listas(list), tuplas(tuple) e dicionários(dict);
    - Funções: definição com def, parâmetros, retorno(return);
+=======
+   - Importação de bibliotecas com import;
+      
+>>>>>>> 694f74ece01a88d891ed0b3055ef1c82f2dbfe49
